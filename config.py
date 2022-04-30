@@ -1,10 +1,13 @@
 
 
+from distutils.command.config import config
+
+
 class Config:
     '''
     General configureation parent class
     '''
-    pass
+    
 
 class ProdConfig(Config):
     '''
@@ -17,3 +20,8 @@ class DevConfig(Config):
     Development configuration child class 
     '''
     DEBUG = True
+
+config_options = {
+    'development' : DevConfig,
+    'production' : ProdConfig
+}
