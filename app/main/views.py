@@ -1,6 +1,7 @@
-import imp
+from venv import main
 from flask import render_template
-from . import main
+from app.requests import find_sources, get_article
+
 
 
 #Views 
@@ -13,19 +14,19 @@ def home():
     return render_template('home.html')
 
 
-@main.route('/')
+@main.route('/sources')
 def index():
     '''
     View index page that displays/returns news sources
     '''
+    general = find_sources()
+    return render_template('index.html', message = general)
 
-    return render_template('index.html')
 
-
-@main.route('/')
-def about():
+@main.route('/about/<source_id>')
+def about(source_id):
     '''
     View about page that displays/returns the details of articles
     '''
-
-    return render_template('about.html')
+    articles = get_article(source_id)
+    return render_template('about.html', articles = articles)
