@@ -1,1 +1,30 @@
 {% extend 'base.html' %} 
+
+
+
+{% block content %}
+
+<div id="articles">
+    <div class="container">
+        <hr>
+        <h1 class="text-center">NEW ARTICLES</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 article">
+
+                <div class="card">
+                    <h3 class="card-title">
+                           Article Source: {{}} 
+                    </h3>
+                    <div class="card-body">
+                        <a href="/"><button class="btn bg-primary">Read Article</button></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
