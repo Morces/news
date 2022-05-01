@@ -1,5 +1,5 @@
-from venv import main
 from flask import render_template
+from . import main
 from app.requests import find_sources, get_article
 
 
