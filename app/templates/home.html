@@ -1,17 +1,42 @@
 {% extends 'base.html' %}
 
+
 {% block css %}
-  <link rel="stylesheet" href="{{url_for('static',filename = 'css/home.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename ='css/home.css')}}">
 {% endblock %}
 
 {% block content %}
 
-<div>
+<section>
     <div class="container">
+        <nav class="navbar">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <h3>NEWS <span class = "news">UPDATE</span>  </h3>
+             </a>
+            </div>
+          </nav>
         <div class="row">
             <div class="col-md-7">
                 <h3>EXPLORE EVERYTHING</h3>
+                <h4>
+                    CATCH UP ON EVERYTHING YOU MISSED <br>
+                    YOU WILL BE AMAZED TO FIND ALL DETAILS HERE!! <br>
+                    ENJOY THIS AMAZING CONTENT!! 
+                </h4>
+            </div>
+            <div class="col-md-5">
+                <div class="circle float">
+                    <h3 class="text-circle">
+                        DISCOVER, EXPLORE, ENJOY!
+                    </h3>
+                </div>
+            </div>
+            <div class="explore">
+                <a href="/sources"><button class="btn btn-primary">EXPLORE SOURCES</button></a>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+{% endblock %}

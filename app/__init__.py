@@ -1,6 +1,4 @@
 from flask import Flask
-
-from app.requests import configure_request
 from config import config_options
 
 

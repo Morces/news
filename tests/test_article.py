@@ -1,10 +1,10 @@
 
 import unittest
 
-from models import Articles
+from app.models import Articles
 
 
-class test_article(unittest.TestCase):
+class test_articles(unittest.TestCase):
     '''
     This test class is for testing the behaviour of the Article class
     '''

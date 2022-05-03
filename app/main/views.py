@@ -1,32 +1,35 @@
-from flask import render_template
+# from unicodedata import category
+from imp import source_from_cache
+
+from flask import render_template, request, url_for, redirect
 from . import main
-from app.requests import find_sources, get_article
+from ..requests import find_sources,get_articles
 
 
 
 #Views 
 @main.route('/')
-def home():
-    '''
-    View home page that displays/returns the home page of the app
-    '''
-
-    return render_template('home.html')
-
-
-@main.route('/sources')
 def index():
     '''
     View index page that displays/returns news sources
     '''
-    general = find_sources()
-    return render_template('index.html', message = general)
+
+    general = find_sources('general')
+    sports = find_sources('sports')
+    business = find_sources('business')
+    technology = find_sources('technology')
+    entertainment = find_sources('entertainment')
+    science = find_sources('science')
+
+    return render_template('index.html', source = source_from_cache, general = general, sports = sports, business = business, technology = technology, entertainment = entertainment, science = science)
 
 
-@main.route('/about/<source_id>')
-def about(source_id):
+@main.route('/<source_id>')
+def articles(source_id):
     '''
     View about page that displays/returns the details of articles
     '''
-    articles = get_article(source_id)
-    return render_template('about.html', articles = articles)
+
+    articles = get_articles(source_id)
+    title = f'{source_id}'
+    return render_template('article.html', title=title, articles = articles, name = source_id)

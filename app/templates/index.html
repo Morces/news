@@ -1,24 +1,81 @@
-{% extend 'base.html' %} 
-
-
-
+{% extends 'base.html' %} 
+{% import 'macros.html' as macro %}
 {% block content %}
 
-<div id="articles">
-    <div class="container">
-        <hr>
-        <h1 class="text-center">NEW ARTICLES</h1>
-        <hr>
+<div id="sources">
+    <div class="container-fluid">
+        <form>
+            <input type="text" class="form-control" name="article_query" placeholder="Search articles..">
+            <br>
+            <input type="submit" value="Search" class="btn btn-primary">
+        </form>
+        <br><br>
+        <div class="cardy">
+            <div class="row" id="general">
+                <div class="col article">
+                    <h3>General</h3>
+                    <div class="card-body">
+                     {{macro.sourceCategories(general)}}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-6 article">
-
-                <div class="card">
+            <div class="col-md-12 article" id="sports">
+                <div class="cardy">
                     <h3 class="card-title">
-                           Article Source: {{}} 
+                           Sports 
                     </h3>
                     <div class="card-body">
-                        <a href="/"><button class="btn bg-primary">Read Article</button></a>
-
+                     {{macro.sourceCategories(sports)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 article" id="business">
+                <div class="cardy">
+                    <h3 class="card-title">
+                           Business 
+                    </h3>
+                    <div class="card-body">
+                     {{macro.sourceCategories(business)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 article" id="technology">
+                <div class="cardy">
+                    <h3 class="card-title">
+                           Technology 
+                    </h3>
+                    <div class="card-body">
+                     {{macro.sourceCategories(technology)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 article" id="entertainment">
+                <div class="cardy">
+                    <h3 class="card-title">
+                           Entertainment  
+                    </h3>
+                    <div class="card-body">
+                     {{macro.sourceCategories(entertainment)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 article" id="science">
+                <div class="cardy">
+                    <h3 class="card-title">
+                          Science 
+                    </h3>
+                    <div class="card-body">
+                     {{macro.sourceCategories(science)}}
                     </div>
                 </div>
             </div>

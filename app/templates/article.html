@@ -7,7 +7,7 @@
 
 <div class="container">
     <hr>
-    {% for article in article %}
+    {% for article in articles %}
 
     <h2>{{article.title}}</h2>
     <h4>{{article.description}}</h4>
@@ -16,8 +16,8 @@
     <div>
         <a href="{{article.url}}"><button class="btn bg-primary" type="button">Read more..</button></a>
     </div>
-    <p class="text-muted">Article By: {{artcle.author}}</p>
-    <p>Posted on: {{artcle.publishedAt}}</p>
+    <p class="text-muted">Article By: {{article.author}}</p>
+    <p>Posted on: {{article.publishedAt}}</p>
     <br>
     <hr>
 

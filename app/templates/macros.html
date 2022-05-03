@@ -1,0 +1,19 @@
+{% macro sourceCategories(categories) %}
+{% for category in categories %}
+<div class="row">
+    <div class="col-md-3">
+        <div class="card articles">
+            <div class="card-header">
+                <h3>{{category.name}}</h3>
+            </div>
+            <div class="card-body">
+                <p>{{category.description | truncate(100)}}</p>
+                <br>
+                <a href="{{category.url}}">Read Article</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor%}
+
+{% endmacro %}
